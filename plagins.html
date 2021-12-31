@@ -9,10 +9,24 @@
 </head>
 <body class="text-lg bg-gray-50">
 
-    <p class="uppercase text-center pt-12 pb-12 text-2xl bg-cyan-400">Плагины для работы над дизайнами и разработкой в Figma</p>
+    <p class="uppercase text-center pt-12 pb-12 font-bold text-4xl bg-cyan-400">
+        Плагины для работы над дизайнами и разработкой в Figma
+    </p>
+
+    <div class="text-lg lg:flex-grow bg-gray-50 text-center bg-red-400 flex justify-center gap-10">
+        <a href="#life" class="plaginLife block mt-4 mb-4 lg:inline-block lg:mt-0 lg:mb-0 text-teal-200 hover:text-white animate-pulse">
+          Плагины на все случаи жизни
+        </a>
+        <a href="#color" class="plaginColor block mt-4 mb-4 lg:inline-block lg:mt-0 lg:mb-0 text-teal-200 hover:text-white animate-pulse">
+          Плагины для цвета
+        </a>
+        <a href="#text" class="plaginText block mt-4 mb-4 lg:inline-block lg:mt-0 lg:mb-0 text-teal-200 hover:text-white animate-pulse">
+          Плагины для текста
+        </a>
+      </div>
 
     <div class="container mx-auto px-4 pt-6 ">
-        <p class="underline pb-10 font-bold text-4xl">
+        <p id="life" class="text-3xl font-semibold underline pb-10">
             Плагины и расширения на все случаи жизни
         </p>
 
@@ -116,11 +130,11 @@
             Blobs
         </a>
         
-        <p class="text-center md:text-right pt-5 pb-20 w-3/3">
+        <p class="text-center md:text-right pt-5 pb-14 w-3/3">
             Плагин создает различные изогнутые формы.
         </p>
         <!--Плангины для работы с цветом-->
-        <p class="underline pb-10 font-bold text-4xl">
+        <p id="color" class="text-3xl font-semibold underline pt-6 pb-10">
             Плангины для работы с цветом
         </p>
 
@@ -168,11 +182,11 @@
             Color-Search
         </a>
         
-        <p class="text-center md:text-right pt-5 pb-20 w-3/3">
+        <p class="text-center md:text-right pt-5 pb-14 w-3/3">
             Цветовая палитра по поисковому запросу.
         </p>
         <!--Плангины для работы с текстом-->
-        <p class="underline pb-10 font-bold text-4xl">
+        <p id="text" class="text-3xl font-semibold underline pt-6 pb-10">
             Плангины для работы с текстом
         </p>
 
@@ -241,5 +255,31 @@
         </p>
 
     </div>
+    <script>
+        const links_one = document.querySelectorAll(".plaginLife");
+        const links_two = document.querySelectorAll(".plaginColor");
+        const links_free = document.querySelectorAll(".plaginText");
+
+        for (const link of links_one) {
+            link.addEventListener("click", clickHandler);
+        }
+
+        for (const link of links_two) {
+            link.addEventListener("click", clickHandler);
+        }
+
+        for (const link of links_free) {
+            link.addEventListener("click", clickHandler);
+        }
+
+        function clickHandler(e) {
+            e.preventDefault();
+            const href = this.getAttribute("href");
+
+            document.querySelector(href).scrollIntoView({
+                behavior: "smooth"
+            });
+        }
+    </script>
 </body>
 </html>
